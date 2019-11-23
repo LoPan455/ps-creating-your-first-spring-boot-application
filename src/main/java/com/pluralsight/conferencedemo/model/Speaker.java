@@ -1,5 +1,7 @@
 package com.pluralsight.conferencedemo.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -11,6 +13,7 @@ import javax.persistence.ManyToMany;
 import org.hibernate.annotations.Type;
 
 @Entity(name = "speakers")
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class Speaker {
 
   @Id
@@ -28,6 +31,7 @@ public class Speaker {
   private byte[] speaker_photo;
 
   @ManyToMany(mappedBy = "speakers")
+  @JsonIgnore
   private List<Session> sessions;
 
   public byte[] getSpeaker_photo() {
