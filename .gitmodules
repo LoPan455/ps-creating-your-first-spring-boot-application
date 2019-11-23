@@ -1,0 +1,3 @@
+[submodule "ps-first-spring-boot-app"]
+	path = ps-first-spring-boot-app
+	url = https://github.com/dlbunker/ps-first-spring-boot-app.git
