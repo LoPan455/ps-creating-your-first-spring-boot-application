@@ -11,6 +11,5 @@ services:
       - ./ps-first-spring-boot-app/database/postgresql/2_insert_data.sql:/docker-entrypoint-initdb.d/2_insert_data.sql
       - ./ps-first-spring-boot-app/database/postgresql/data:/var/lib/postgresql/data
     environment:
-      POSTGRES_PASSWORD: Welcome
       POSTGRES_DB: conference_app
 
